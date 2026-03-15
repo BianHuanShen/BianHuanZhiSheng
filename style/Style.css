@@ -1,0 +1,258 @@
+﻿/*========================= */ /* ESTILO GENERAL */ /* ========================= */ 
+body {
+    background: #0b0b0b;
+    color: #e6e6e6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.7;
+}
+/* ========================= */ /* COLORES GENERALES TITULOS */ /* ========================= */
+
+h1 {
+    color: #e6c76b;
+}
+
+h2 {
+    color: #d9b85a;
+}
+
+h3 {
+    color: #cfae55;
+}
+
+h4 {
+    color: #bfa65a;
+}
+
+h5 {
+    color: #a89255;
+}
+
+h6 {
+    color: #8f7c4a;
+}
+/* ========================= */ /* HEADER PORTADA */ /* ========================= */
+
+.header-portada {
+    background-image: url("../img/imagenh.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid #8b1e1e;
+}
+    /* capa oscura para mejorar lectura */
+
+    .header-portada::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.55);
+    }
+/* contenido del header */
+
+.header-contenido {
+    position: relative;
+    text-align: center;
+}
+
+    .header-contenido h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .header-contenido h2 {
+        margin-top: 10px;
+    }
+/* ========================= */ /* NAVEGACIÓN */ /* ========================= */
+
+nav {
+    background: #111;
+    padding: 12px;
+}
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #e6e6e6;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            color: #d94c1a;
+        }
+/* ========================= */ /* CONTENIDO PRINCIPAL */ /* ========================= */
+
+main {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+}
+/* ========================= */ /* FORO */ /* ========================= */
+
+.foro-categoria {
+    background: #1c1c1c;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #8b1e1e;
+    border-radius: 6px;
+}
+
+.tema {
+    background: #2a2a2a;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+    .tema a {
+        color: #e6e6e6;
+        text-decoration: none;
+    }
+
+        .tema a:hover {
+            color: #d94c1a;
+        }
+/* ========================= */ /* IMÁGENES */ /* ========================= */
+
+.imagen-novela {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(217,76,26,0.6);
+}
+/* ========================= */ /* FOOTER */ /* ========================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    border-top: 2px solid #8b1e1e;
+    margin-top: 40px;
+}
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+
+/* ===== COMPUTADOR GRANDE ===== */
+
+@media (min-width:1400px) {
+
+    main {
+        max-width: 1200px;
+    }
+
+    .header-portada {
+        height: 420px;
+    }
+
+    .header-contenido h1 {
+        font-size: 3.2rem;
+    }
+
+    .header-contenido h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ===== LAPTOP / PC NORMAL ===== */
+
+@media (max-width:1200px) {
+
+    main {
+        width: 90%;
+    }
+
+    .header-portada {
+        height: 350px;
+    }
+}
+
+
+/* ===== TABLET ===== */
+
+@media (max-width:900px) {
+
+    main {
+        width: 92%;
+    }
+
+    .header-portada {
+        height: 280px;
+    }
+
+    .header-contenido h1 {
+        font-size: 2.2rem;
+    }
+
+    .header-contenido h2 {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+
+/* ===== CELULAR ===== */
+
+@media (max-width:600px) {
+
+    .header-portada {
+        height: 220px;
+    }
+
+    .header-contenido h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-contenido h2 {
+        font-size: 1.1rem;
+    }
+
+    main {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .foro-categoria {
+        padding: 15px;
+    }
+
+    .tema {
+        padding: 12px;
+    }
+
+    .imagen-novela {
+        width: 100%;
+    }
+}
