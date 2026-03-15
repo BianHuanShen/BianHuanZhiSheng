@@ -1,2 +1,0 @@
-# BianHuanZhiSheng
-Web Novel
