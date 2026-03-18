@@ -13,46 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!containers.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            const container = entry.target;
-            const video = container.querySelector("video");
-            const playBtn = container.querySelector(".play-btn");
-
-            if (entry.isIntersecting) {
-
-                // Pausar todos los demás
-                document.querySelectorAll("video").forEach(v => {
-                    if (v !== video) v.pause();
-                });
-
-                video.play().catch(() => {});
-                playBtn.style.display = "none";
-
-            } else {
-
-                video.pause();
-                playBtn.style.display = "flex";
-
-            }
-
-        });
-
-    }, {
-        threshold: 0.6 // se activa cuando el 60% es visible
-    });
-
     containers.forEach(container => {
 
         const video = container.querySelector("video");
         const playBtn = container.querySelector(".play-btn");
 
-        observer.observe(container);
+        // CLICK SOLO EN EL VIDEO (NO EN TODO EL CONTENEDOR)
+        video.addEventListener("click", (e) => {
 
-        // CLICK MANUAL
-        container.addEventListener("click", () => {
+            e.stopPropagation();
 
             if (video.paused) {
 
@@ -72,7 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-        // FIN DEL VIDEO
+        // MOSTRAR BOTÓN SI PAUSA
+        video.addEventListener("pause", () => {
+            playBtn.style.display = "flex";
+        });
+
+        // OCULTAR BOTÓN SI REPRODUCE
+        video.addEventListener("play", () => {
+            playBtn.style.display = "none";
+        });
+
+        // FIN
         video.addEventListener("ended", () => {
             playBtn.style.display = "flex";
         });
