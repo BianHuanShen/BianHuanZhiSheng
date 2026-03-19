@@ -4,15 +4,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const capitulos = [
     { nombre: "Capítulo 1 - Inicio", link: "capitulos/capitulo1.html" },
+    { nombre: "Capítulo 1 Parte II", link: "capitulos/capitulo1actoII.html" },
     { nombre: "Capítulo 2 - El Despertar", link: "capitulos/capitulo2.html" },
     { nombre: "Capítulo 3 - La Ruina", link: "capitulos/capitulo3.html" }
 ];
 
 const capContainer = document.getElementById("submenu-capitulos");
 
+// 🔥 LIMPIAR POR SI SE EJECUTA DOS VECES
+capContainer.innerHTML = "";
+
 capitulos.forEach(cap => {
     const li = document.createElement("li");
-    li.innerHTML = `<a href="${cap.link}">${cap.nombre}</a>`;
+
+    const a = document.createElement("a");
+    a.href = cap.link;
+    a.textContent = cap.nombre;
+
+    li.appendChild(a);
     capContainer.appendChild(li);
 });
     // ===== TEORIAS =====
