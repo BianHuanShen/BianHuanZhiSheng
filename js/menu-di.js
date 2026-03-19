@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== CAPITULOS =====
 
 const capitulos = [
-    { nombre: "Capítulo 1 - Inicio", link: "capitulos/capitulo1.html" },
+    { nombre: "Capítulo 1 - Inicio", link: "../capitulos/capitulo1.html" },
     { nombre: "Capítulo 1 Parte II", link: "capitulos/capitulo1actoII.html" },
     { nombre: "Capítulo 2 - El Despertar", link: "capitulos/capitulo2.html" },
     { nombre: "Capítulo 3 - La Ruina", link: "capitulos/capitulo3.html" }
