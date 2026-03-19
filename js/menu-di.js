@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // ===== CAPITULOS =====
-    const capContainer = document.getElementById("submenu-capitulos");
 
-    for (let i = 1; i <= 10; i++) {
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="capitulos/capitulo${i}.html">Capítulo ${i}</a>`;
-        capContainer.appendChild(li);
-    }
+const capitulos = [
+    { nombre: "Capítulo 1 - Inicio", link: "capitulos/capitulo1.html" },
+    { nombre: "Capítulo 2 - El Despertar", link: "capitulos/capitulo2.html" },
+    { nombre: "Capítulo 3 - La Ruina", link: "capitulos/capitulo3.html" }
+];
 
+const capContainer = document.getElementById("submenu-capitulos");
+
+capitulos.forEach(cap => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${cap.link}">${cap.nombre}</a>`;
+    capContainer.appendChild(li);
+});
     // ===== TEORIAS =====
     const teorias = ["Origen del Cambio", "Dioses", "Dragones"];
 
