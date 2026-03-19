@@ -73,7 +73,45 @@ h6 {
         margin-top: 10px;
     }
 /* ========================= */ /* NAVEGACIÓN */ /* ========================= */
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
 
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 180px;
+    
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.submenu li {
+    list-style: none;
+}
+
+.submenu li a {
+    display: block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background: rgba(255,80,0,0.6);
+}
 nav {
     background: #111;
     padding: 12px;
