@@ -305,7 +305,37 @@ footer {
     background: rgba(255, 80, 0, 0.8);
     transform: translate(-50%, -50%) scale(1.1);
 }
+/* ========================= */
+/* CENIZA CINEMÁTICA PRO */
+/* ========================= */
 
+.ceniza {
+    position: fixed;
+    top: -10px;
+
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+
+    pointer-events: none; /* 🔥 no bloquea clicks */
+    z-index: 1;
+
+    animation: caer linear infinite;
+}
+
+/* Movimiento realista */
+@keyframes caer {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(var(--drift));
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));
+    }
+}
 
 /* ========================= */
 /* RESPONSIVE */
