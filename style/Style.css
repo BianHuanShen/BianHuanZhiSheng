@@ -7,7 +7,21 @@ body {
     line-height: 1.7;
 }
 /* 🌫️ FONDO CENIZA */
+.ceniza {
+    position: fixed;
+    top: -10px;
+    width: 5px;
+    height: 5px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    animation: caer linear infinite;
+}
 
+@keyframes caer {
+    to {
+        transform: translateY(100vh);
+    }
+}
 /* ========================= */ /* COLORES GENERALES TITULOS */ /* ========================= */
 
 h1 {
@@ -80,7 +94,18 @@ h6 {
     gap: 20px;
     list-style: none;
 }
+.menu a {
+    color: white;
+    transition: 0.3s;
+}
 
+.menu a:hover {
+    color: #ff6a00;
+    text-shadow:
+        0 0 5px #ff6a00,
+        0 0 15px #ff4500,
+        0 0 30px #ff2200;
+}
 .menu-item {
     position: relative;
 }
@@ -138,7 +163,25 @@ nav {
             color: #d94c1a;
         }
 /* ========================= */ /* CONTENIDO PRINCIPAL */ /* ========================= */
+/* 🔥 TEXTO CON FUEGO */
+.texto-fuego {
+    color: #ff6a00;
+    text-shadow:
+        0 0 5px #ff6a00,
+        0 0 10px #ff4500,
+        0 0 20px #ff2200,
+        0 0 40px rgba(255, 80, 0, 0.7);
+}
 
+/* 🔥 HOVER EFECTO */
+.texto-fuego:hover {
+    text-shadow:
+        0 0 10px #ff6a00,
+        0 0 20px #ff4500,
+        0 0 40px #ff2200,
+        0 0 80px rgba(255, 80, 0, 1);
+    transition: 0.3s;
+}
 main {
     width: 80%;
     max-width: 1000px;
@@ -201,8 +244,7 @@ main {
 
 
     /* efecto hover */
-
-    .boton-capitulo:hover {
+.boton-capitulo:hover {
         background: #8b1e1e;
         color: white;
         box-shadow: 0 0 10px rgba(217,76,26,0.7);
