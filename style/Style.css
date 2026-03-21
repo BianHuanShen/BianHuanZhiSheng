@@ -3,17 +3,45 @@
 /* ========================= */
 
 body {
-    background: #0b0b0b;
-    color: #e6e6e6;
+    background: radial-gradient(circle at center, #1a1a1a, #000);
+    color: #ccc;
     font-family: Arial, sans-serif;
     margin: 0;
     line-height: 1.7;
 }
-
-
+/* 🌫️ FONDO CENIZA */
 /* ========================= */
-/* COLORES TITULOS */
+/* CENIZA CINEMÁTICA PRO */
 /* ========================= */
+
+.ceniza {
+    position: fixed;
+    top: -10px;
+    filter: blur(1px);
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+
+    pointer-events: none; /* 🔥 no bloquea clicks */
+    z-index: 1;
+
+    animation: caer linear infinite;
+}
+
+/* Movimiento realista */
+@keyframes caer {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(var(--drift));
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));
+    }
+}
+/* ========================= */ /* COLORES GENERALES TITULOS */ /* ========================= */
 
 h1 {
     color: #e6c76b;
@@ -38,13 +66,65 @@ h5 {
 h6 {
     color: #8f7c4a;
 }
+/* ========================= */ /* HEADER PORTADA */ /* ========================= */
 
+.header-portada {
+    background-image: url("../img/imagenh.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid #8b1e1e;
+}
+    /* capa oscura para mejorar lectura */
+
+    .header-portada::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.55);
+    }
+/* contenido del header */
+
+.header-contenido {
+    position: relative;
+    text-align: center;
+}
+
+    .header-contenido h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .header-contenido h2 {
+        margin-top: 10px;
+    }
+/* ========================= */ /* NAVEGACIÓN */ /* ========================= */
 .menu {
     display: flex;
     gap: 20px;
     list-style: none;
 }
+.menu a {
+    color: white;
+    transition: 0.3s;
+}
 
+.menu a:hover {
+    color: #ff6a00;
+    text-shadow:
+        0 0 5px #ff6a00,
+        0 0 15px #ff4500,
+        0 0 30px #ff2200;
+}
 .menu-item {
     position: relative;
 }
@@ -78,60 +158,6 @@ h6 {
 .submenu li a:hover {
     background: rgba(255,80,0,0.6);
 }
-
-/* ========================= */
-/* PORTADA CAPITULO */
-/* ========================= */
-
-.portada-capitulo {
-    background-image: url("../img/imagenh.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-bottom: 2px solid #8b1e1e;
-}
-
-    /* capa oscura */
-
-    .portada-capitulo::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.55);
-    }
-
-
-/* TEXTO PORTADA */
-
-.portada-contenido {
-    position: relative;
-    text-align: center;
-}
-
-    .portada-contenido h1 {
-        font-size: 2.8rem;
-        letter-spacing: 2px;
-    }
-
-    .portada-contenido h2 {
-        margin-top: 10px;
-    }
-
-
-
-/* ========================= */
-/* NAVEGACION */
-/* ========================= */
-
 nav {
     background: #111;
     padding: 12px;
@@ -155,99 +181,57 @@ nav {
         nav a:hover {
             color: #d94c1a;
         }
+/* ========================= */ /* CONTENIDO PRINCIPAL */ /* ========================= */
+/* 🔥 TEXTO CON FUEGO */
+.texto-fuego {
+    color: #ff6a00;
+    text-shadow:
+        0 0 5px #ff6a00,
+        0 0 10px #ff4500,
+        0 0 20px #ff2200,
+        0 0 40px rgba(255, 80, 0, 0.7);
+}
 
-
-
-/* ========================= */
-/* CONTENIDO CAPITULO */
-/* ========================= */
-
-.capitulo {
-    max-width: 800px;
+/* 🔥 HOVER EFECTO */
+.texto-fuego:hover {
+    text-shadow:
+        0 0 10px #ff6a00,
+        0 0 20px #ff4500,
+        0 0 40px #ff2200,
+        0 0 80px rgba(255, 80, 0, 1);
+    transition: 0.3s;
+}
+main {
+    width: 80%;
+    max-width: 1000px;
     margin: auto;
-    padding: 40px 25px;
-    line-height: 1.9;
-    font-size: 18px;
-    background: #111;
-    border-left: 3px solid #8b1e1e;
-    border-right: 3px solid #8b1e1e;
+    padding: 25px;
 }
+/* ========================= */ /* FORO */ /* ========================= */
 
-
-
-    /* TITULO DEL CAPITULO */
-
-    .capitulo h1 {
-        text-align: center;
-        font-size: 2.4rem;
-        margin-bottom: 25px;
-        letter-spacing: 2px;
-        border-bottom: 1px solid #8b1e1e;
-        padding-bottom: 15px;
-    }
-
-
-
-    /* ACTOS */
-
-    .capitulo h2 {
-        margin-top: 35px;
-        margin-bottom: 20px;
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-        border-left: 4px solid #8b1e1e;
-        padding-left: 12px;
-    }
-
-
-
-    /* TITULOS MENORES */
-
-    .capitulo h3 {
-        margin-top: 40px;
-        text-align: center;
-        letter-spacing: 1px;
-    }
-
-
-
-    /* PARRAFOS */
-
-    .capitulo p {
-        margin-bottom: 20px;
-        text-align: justify;
-    }
-
-
-
-/* ========================= */
-/* NOTAS DEL AUTOR */
-/* ========================= */
-
-.nota-autor {
-    margin-top: 30px;
-    padding: 18px;
-    background: #1a1a1a;
-    border-left: 4px solid #d94c1a;
-    font-style: italic;
-    font-size: 16px;
-    color: #cfcfcf;
-}
-
-
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-
-footer {
-    text-align: center;
+.foro-categoria {
+    background: #1c1c1c;
     padding: 20px;
-    background: #111;
-    border-top: 2px solid #8b1e1e;
-    margin-top: 40px;
+    margin-bottom: 20px;
+    border-left: 5px solid #8b1e1e;
+    border-radius: 6px;
 }
 
+.tema {
+    background: #2a2a2a;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+    .tema a {
+        color: #e6e6e6;
+        text-decoration: none;
+    }
+
+        .tema a:hover {
+            color: #d94c1a;
+        }
 /* ========================= */ /* IMÁGENES */ /* ========================= */
 
 .imagen-novela {
@@ -259,37 +243,77 @@ footer {
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(217,76,26,0.6);
 }
-.contenedor-audio {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background: rgba(20,20,20,0.9);
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(255, 80, 0, 0.3);
-    text-align: center;
+/* ========================= */ /* FOOTER */ /* ========================= */
+/* ========================= */
+/* BOTONES CAPITULOS */
+/* ========================= */
+
+.boton-capitulo {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #1c1c1c;
+    color: #e6c76b;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #8b1e1e;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
-.audio-player {
-    width: 100%;
-    margin-top: 10px;
+
+    /* efecto hover */
+.boton-capitulo:hover {
+        background: #8b1e1e;
+        color: white;
+        box-shadow: 0 0 10px rgba(217,76,26,0.7);
+        transform: translateY(-2px);
+    }
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    border-top: 2px solid #8b1e1e;
+    margin-top: 40px;
 }
+.contenedor-video {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* permite varios trailers */
+}
+
+/* TARJETA DE VIDEO */
 .video-interactivo {
     position: relative;
+    width: 320px; /* 🔥 tamaño tipo Netflix */
+    height: 180px;
     cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
+/* VIDEO */
+.video-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTÓN PLAY */
 .play-btn {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
-    font-size: 50px;
+    font-size: 30px;
     color: white;
     background: rgba(0,0,0,0.6);
-    padding: 15px 20px;
+    padding: 10px 15px;
     border-radius: 50%;
     
+    pointer-events: none; /* 🔥 IMPORTANTE */
     transition: 0.3s;
 }
 
@@ -297,81 +321,64 @@ footer {
     background: rgba(255, 80, 0, 0.8);
     transform: translate(-50%, -50%) scale(1.1);
 }
-
-/* ========================= */
-/* CENIZA CINEMÁTICA PRO */
-/* ========================= */
-
-.ceniza {
-    position: fixed;
-    top: -10px;
-    filter: blur(1px);
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-
-    pointer-events: none; /* 🔥 no bloquea clicks */
-    z-index: 1;
-
-    animation: caer linear infinite;
-}
-
-/* Movimiento realista */
-@keyframes caer {
-    0% {
-        transform: translateY(0) translateX(0);
-    }
-
-    50% {
-        transform: translateY(50vh) translateX(var(--drift));
-    }
-
-    100% {
-        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));
-    }
-}
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
 
-/* PC GRANDE */
+
+/* ===== COMPUTADOR GRANDE ===== */
 
 @media (min-width:1400px) {
 
-    .capitulo {
-        max-width: 900px;
+    main {
+        max-width: 1200px;
     }
 
-    .portada-capitulo {
-        height: 550px;
+    .header-portada {
+        height: 420px;
+    }
+
+    .header-contenido h1 {
+        font-size: 3.2rem;
+    }
+
+    .header-contenido h2 {
+        font-size: 1.6rem;
     }
 }
 
 
-
-/* LAPTOP */
+/* ===== LAPTOP / PC NORMAL ===== */
 
 @media (max-width:1200px) {
 
-    .capitulo {
+    main {
         width: 90%;
+    }
+
+    .header-portada {
+        height: 350px;
     }
 }
 
 
-
-/* TABLET */
+/* ===== TABLET ===== */
 
 @media (max-width:900px) {
 
-    .portada-capitulo {
-        height: 380px;
+    main {
+        width: 92%;
     }
 
-    .portada-contenido h1 {
+    .header-portada {
+        height: 280px;
+    }
+
+    .header-contenido h1 {
         font-size: 2.2rem;
     }
 
-    .portada-contenido h2 {
+    .header-contenido h2 {
         font-size: 1.3rem;
     }
 
@@ -381,34 +388,42 @@ footer {
 }
 
 
-
-/* CELULAR */
+/* ===== CELULAR ===== */
 
 @media (max-width:600px) {
 
-    .portada-capitulo {
-        height: 260px;
+    .header-portada {
+        height: 220px;
     }
 
-    .portada-contenido h1 {
-        font-size: 1.7rem;
+    .header-contenido h1 {
+        font-size: 1.8rem;
     }
 
-    .portada-contenido h2 {
-        font-size: 1rem;
+    .header-contenido h2 {
+        font-size: 1.1rem;
+    }
+
+    main {
+        width: 95%;
+        padding: 15px;
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
-    .capitulo {
-        width: 95%;
-        padding: 25px 18px;
+    .foro-categoria {
+        padding: 15px;
     }
 
-        .capitulo p {
-            font-size: 17px;
-        }
+    .tema {
+        padding: 12px;
+    }
+
+    .imagen-novela {
+        width: 100%;
+    }
 }
