@@ -77,25 +77,26 @@ h6 { color: #8f7c4a; }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
     height: 500px;
     width: 100%;
-    
     display: flex;
     align-items: center;
     justify-content: center;
-    
     position: relative;
     border-bottom: 2px solid #8b1e1e;
 }
 
-/* Capa oscura encima de la imagen */
-.portada-capitulo::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* reemplaza top/left/right/bottom */
-    background: rgba(0,0,0,0.55);
-}
+    /* capa oscura */
+
+    .portada-capitulo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.55);
+    }
 
 
 /* ========================= */
@@ -107,14 +108,14 @@ h6 { color: #8f7c4a; }
     text-align: center;
 }
 
-.portada-contenido h1 {
-    font-size: 2.8rem;
-    letter-spacing: 2px;
-}
+    .portada-contenido h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
 
-.portada-contenido h2 {
-    margin-top: 10px;
-}
+    .portada-contenido h2 {
+        margin-top: 10px;
+    }
 
 
 /* ========================= */
