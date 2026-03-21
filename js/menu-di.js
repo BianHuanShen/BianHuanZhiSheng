@@ -21,23 +21,22 @@ document.addEventListener("DOMContentLoaded", () => {
         capContainer.appendChild(li);
     });
 
-    // ===== MENU =====
-    const items = document.querySelectorAll(".menu-item");
+    // ===== MENU INTERACTIVO =====
+    const botones = document.querySelectorAll(".menu-btn");
 
-    items.forEach(item => {
+    botones.forEach(btn => {
 
-        const boton = item.querySelector("a");
-        const submenu = item.querySelector(".submenu");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
 
-        if (!submenu) return;
+            const submenu = btn.nextElementSibling;
 
-        boton.addEventListener("click", (e) => {
-            e.preventDefault(); // SOLO para abrir menú
-
+            // cerrar otros
             document.querySelectorAll(".submenu").forEach(s => {
                 if (s !== submenu) s.style.display = "none";
             });
 
+            // toggle
             submenu.style.display =
                 submenu.style.display === "block" ? "none" : "block";
         });
