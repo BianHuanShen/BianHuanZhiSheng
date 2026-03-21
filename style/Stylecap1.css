@@ -9,8 +9,38 @@ body {
     margin: 0;
     line-height: 1.7;
 }
+/* 🌫️ FONDO CENIZA */
+/* ========================= */
+/* CENIZA CINEMÁTICA PRO */
+/* ========================= */
 
+.ceniza {
+    position: fixed;
+    top: -10px;
+    filter: blur(1px);
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
 
+    pointer-events: none; /* 🔥 no bloquea clicks */
+    z-index: 1;
+
+    animation: caer linear infinite;
+}
+
+/* Movimiento realista */
+@keyframes caer {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(var(--drift));
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));
+    }
+}
 /* ========================= */
 /* COLORES TITULOS */
 /* ========================= */
@@ -48,22 +78,18 @@ h6 {
 .menu-item {
     position: relative;
 }
-
 .submenu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    
     background: #111;
     padding: 10px;
     border-radius: 8px;
     min-width: 180px;
-    
     box-shadow: 0 0 15px rgba(0,0,0,0.6);
     z-index: 1000;
 }
-
 .submenu li {
     list-style: none;
 }
@@ -96,9 +122,7 @@ h6 {
     position: relative;
     border-bottom: 2px solid #8b1e1e;
 }
-
     /* capa oscura */
-
     .portada-capitulo::before {
         content: "";
         position: absolute;
@@ -108,26 +132,18 @@ h6 {
         bottom: 0;
         background: rgba(0,0,0,0.55);
     }
-
-
 /* TEXTO PORTADA */
-
 .portada-contenido {
     position: relative;
     text-align: center;
 }
-
     .portada-contenido h1 {
         font-size: 2.8rem;
         letter-spacing: 2px;
     }
-
     .portada-contenido h2 {
         margin-top: 10px;
     }
-
-
-
 /* ========================= */
 /* NAVEGACION */
 /* ========================= */
@@ -155,13 +171,9 @@ nav {
         nav a:hover {
             color: #d94c1a;
         }
-
-
-
 /* ========================= */
 /* CONTENIDO CAPITULO */
 /* ========================= */
-
 .capitulo {
     max-width: 800px;
     margin: auto;
@@ -172,9 +184,6 @@ nav {
     border-left: 3px solid #8b1e1e;
     border-right: 3px solid #8b1e1e;
 }
-
-
-
     /* TITULO DEL CAPITULO */
 
     .capitulo h1 {
@@ -185,11 +194,7 @@ nav {
         border-bottom: 1px solid #8b1e1e;
         padding-bottom: 15px;
     }
-
-
-
     /* ACTOS */
-
     .capitulo h2 {
         margin-top: 35px;
         margin-bottom: 20px;
@@ -198,32 +203,20 @@ nav {
         border-left: 4px solid #8b1e1e;
         padding-left: 12px;
     }
-
-
-
     /* TITULOS MENORES */
-
     .capitulo h3 {
         margin-top: 40px;
         text-align: center;
         letter-spacing: 1px;
     }
-
-
-
     /* PARRAFOS */
-
     .capitulo p {
         margin-bottom: 20px;
         text-align: justify;
     }
-
-
-
 /* ========================= */
 /* NOTAS DEL AUTOR */
 /* ========================= */
-
 .nota-autor {
     margin-top: 30px;
     padding: 18px;
@@ -233,13 +226,9 @@ nav {
     font-size: 16px;
     color: #cfcfcf;
 }
-
-
-
 /* ========================= */
 /* FOOTER */
 /* ========================= */
-
 footer {
     text-align: center;
     padding: 20px;
@@ -247,9 +236,7 @@ footer {
     border-top: 2px solid #8b1e1e;
     margin-top: 40px;
 }
-
 /* ========================= */ /* IMÁGENES */ /* ========================= */
-
 .imagen-novela {
     width: 250px;
     max-width: 100%;
@@ -268,7 +255,6 @@ footer {
     box-shadow: 0 0 25px rgba(255, 80, 0, 0.3);
     text-align: center;
 }
-
 .audio-player {
     width: 100%;
     margin-top: 10px;
@@ -277,22 +263,18 @@ footer {
     position: relative;
     cursor: pointer;
 }
-
 .play-btn {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
     font-size: 50px;
     color: white;
     background: rgba(0,0,0,0.6);
     padding: 15px 20px;
     border-radius: 50%;
-    
     transition: 0.3s;
 }
-
 .video-interactivo:hover .play-btn {
     background: rgba(255, 80, 0, 0.8);
     transform: translate(-50%, -50%) scale(1.1);
@@ -300,8 +282,6 @@ footer {
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
-
-
 /* PC GRANDE */
 
 @media (min-width:1400px) {
@@ -314,9 +294,6 @@ footer {
         height: 550px;
     }
 }
-
-
-
 /* LAPTOP */
 
 @media (max-width:1200px) {
@@ -325,58 +302,40 @@ footer {
         width: 90%;
     }
 }
-
-
-
 /* TABLET */
-
 @media (max-width:900px) {
-
     .portada-capitulo {
         height: 380px;
     }
-
     .portada-contenido h1 {
         font-size: 2.2rem;
     }
-
     .portada-contenido h2 {
         font-size: 1.3rem;
     }
-
     nav ul {
         gap: 15px;
     }
 }
-
-
-
 /* CELULAR */
-
 @media (max-width:600px) {
-
     .portada-capitulo {
         height: 260px;
     }
-
     .portada-contenido h1 {
         font-size: 1.7rem;
     }
-
     .portada-contenido h2 {
         font-size: 1rem;
     }
-
     nav ul {
         flex-direction: column;
         align-items: center;
     }
-
     .capitulo {
         width: 95%;
         padding: 25px 18px;
     }
-
         .capitulo p {
             font-size: 17px;
         }
