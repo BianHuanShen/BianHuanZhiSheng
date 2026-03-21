@@ -1,117 +1,44 @@
-﻿/*========================= */ /* ESTILO GENERAL */ /* ========================= */ 
+/* ========================= */
+/* ESTILO GENERAL CAPITULOS */
+/* ========================= */
+
 body {
-    background: radial-gradient(circle at center, #1a1a1a, #000);
-    color: #ccc;
+    background: #0b0b0b; /* Fondo oscuro */
+    color: #e6e6e6; /* Color del texto */
     font-family: Arial, sans-serif;
     margin: 0;
     line-height: 1.7;
 }
-/* 🌫️ FONDO CENIZA */
-.ceniza {
-    position: fixed;
-    top: -10px;
-    width: 5px;
-    height: 5px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    animation: caer linear infinite;
-}
 
-@keyframes caer {
-    to {
-        transform: translateY(100vh);
-    }
-}
-/* ========================= */ /* COLORES GENERALES TITULOS */ /* ========================= */
 
-h1 {
-    color: #e6c76b;
-}
+/* ========================= */
+/* COLORES DE TÍTULOS */
+/* ========================= */
 
-h2 {
-    color: #d9b85a;
-}
+h1 { color: #e6c76b; }
+h2 { color: #d9b85a; }
+h3 { color: #cfae55; }
+h4 { color: #bfa65a; }
+h5 { color: #a89255; }
+h6 { color: #8f7c4a; }
 
-h3 {
-    color: #cfae55;
-}
 
-h4 {
-    color: #bfa65a;
-}
+/* ========================= */
+/* MENÚ Y SUBMENÚ */
+/* ========================= */
 
-h5 {
-    color: #a89255;
-}
-
-h6 {
-    color: #8f7c4a;
-}
-/* ========================= */ /* HEADER PORTADA */ /* ========================= */
-
-.header-portada {
-    background-image: url("../img/imagenh.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 350px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-bottom: 2px solid #8b1e1e;
-}
-    /* capa oscura para mejorar lectura */
-
-    .header-portada::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.55);
-    }
-/* contenido del header */
-
-.header-contenido {
-    position: relative;
-    text-align: center;
-}
-
-    .header-contenido h1 {
-        font-size: 2.8rem;
-        letter-spacing: 2px;
-    }
-
-    .header-contenido h2 {
-        margin-top: 10px;
-    }
-/* ========================= */ /* NAVEGACIÓN */ /* ========================= */
 .menu {
     display: flex;
     gap: 20px;
     list-style: none;
 }
-.menu a {
-    color: white;
-    transition: 0.3s;
-}
 
-.menu a:hover {
-    color: #ff6a00;
-    text-shadow:
-        0 0 5px #ff6a00,
-        0 0 15px #ff4500,
-        0 0 30px #ff2200;
-}
 .menu-item {
-    position: relative;
+    position: relative; /* necesario para submenu */
 }
 
 .submenu {
-    display: none;
+    display: none; /* oculto por defecto */
     position: absolute;
     top: 100%;
     left: 0;
@@ -139,162 +66,238 @@ h6 {
 .submenu li a:hover {
     background: rgba(255,80,0,0.6);
 }
+
+
+/* ========================= */
+/* PORTADA CAPÍTULO */
+/* ========================= */
+
+.portada-capitulo {
+    background-image: url("../img/imagenh.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    height: 500px;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    border-bottom: 2px solid #8b1e1e;
+}
+
+/* Capa oscura encima de la imagen */
+.portada-capitulo::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* reemplaza top/left/right/bottom */
+    background: rgba(0,0,0,0.55);
+}
+
+
+/* ========================= */
+/* TEXTO PORTADA */
+/* ========================= */
+
+.portada-contenido {
+    position: relative;
+    text-align: center;
+}
+
+.portada-contenido h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+}
+
+.portada-contenido h2 {
+    margin-top: 10px;
+}
+
+
+/* ========================= */
+/* NAVEGACIÓN */
+/* ========================= */
+
 nav {
     background: #111;
     padding: 12px;
 }
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: #e6e6e6;
-        font-weight: bold;
-    }
-
-        nav a:hover {
-            color: #d94c1a;
-        }
-/* ========================= */ /* CONTENIDO PRINCIPAL */ /* ========================= */
-/* 🔥 TEXTO CON FUEGO */
-.texto-fuego {
-    color: #ff6a00;
-    text-shadow:
-        0 0 5px #ff6a00,
-        0 0 10px #ff4500,
-        0 0 20px #ff2200,
-        0 0 40px rgba(255, 80, 0, 0.7);
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
 }
 
-/* 🔥 HOVER EFECTO */
-.texto-fuego:hover {
-    text-shadow:
-        0 0 10px #ff6a00,
-        0 0 20px #ff4500,
-        0 0 40px #ff2200,
-        0 0 80px rgba(255, 80, 0, 1);
-    transition: 0.3s;
+nav a {
+    text-decoration: none;
+    color: #e6e6e6;
+    font-weight: bold;
 }
-main {
-    width: 80%;
-    max-width: 1000px;
+
+nav a:hover {
+    color: #d94c1a;
+}
+
+
+/* ========================= */
+/* CONTENIDO CAPÍTULO */
+/* ========================= */
+
+.capitulo {
+    max-width: 800px;
     margin: auto;
-    padding: 25px;
+    padding: 40px 25px;
+    
+    line-height: 1.9;
+    font-size: 18px;
+    
+    background: #111;
+    border-left: 3px solid #8b1e1e;
+    border-right: 3px solid #8b1e1e;
 }
-/* ========================= */ /* FORO */ /* ========================= */
 
-.foro-categoria {
-    background: #1c1c1c;
-    padding: 20px;
+
+/* TÍTULO PRINCIPAL */
+.capitulo h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    
+    letter-spacing: 2px;
+    border-bottom: 1px solid #8b1e1e;
+    padding-bottom: 15px;
+}
+
+
+/* SUBTÍTULOS / ACTOS */
+.capitulo h2 {
+    margin-top: 35px;
     margin-bottom: 20px;
-    border-left: 5px solid #8b1e1e;
-    border-radius: 6px;
+    
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    
+    border-left: 4px solid #8b1e1e;
+    padding-left: 12px;
 }
 
-.tema {
-    background: #2a2a2a;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 6px;
+
+/* TÍTULOS MENORES */
+.capitulo h3 {
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
-    .tema a {
-        color: #e6e6e6;
-        text-decoration: none;
-    }
 
-        .tema a:hover {
-            color: #d94c1a;
-        }
-/* ========================= */ /* IMÁGENES */ /* ========================= */
+/* PÁRRAFOS */
+.capitulo p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+
+/* ========================= */
+/* NOTA DEL AUTOR */
+/* ========================= */
+
+.nota-autor {
+    margin-top: 30px;
+    padding: 18px;
+    
+    background: #1a1a1a;
+    border-left: 4px solid #d94c1a;
+    
+    font-style: italic;
+    font-size: 16px;
+    color: #cfcfcf;
+}
+
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    
+    background: #111;
+    border-top: 2px solid #8b1e1e;
+    
+    margin-top: 40px;
+}
+
+
+/* ========================= */
+/* IMÁGENES */
+/* ========================= */
 
 .imagen-novela {
     width: 250px;
     max-width: 100%;
     height: auto;
+    
     display: block;
     margin: 15px auto 25px auto;
+    
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(217,76,26,0.6);
 }
-/* ========================= */ /* FOOTER */ /* ========================= */
+
+
 /* ========================= */
-/* BOTONES CAPITULOS */
+/* AUDIO */
 /* ========================= */
 
-.boton-capitulo {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #1c1c1c;
-    color: #e6c76b;
-    text-decoration: none;
-    font-weight: bold;
-    border: 2px solid #8b1e1e;
-    border-radius: 6px;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-
-    /* efecto hover */
-.boton-capitulo:hover {
-        background: #8b1e1e;
-        color: white;
-        box-shadow: 0 0 10px rgba(217,76,26,0.7);
-        transform: translateY(-2px);
-    }
-footer {
-    text-align: center;
+.contenedor-audio {
+    max-width: 600px;
+    margin: 40px auto;
     padding: 20px;
-    background: #111;
-    border-top: 2px solid #8b1e1e;
-    margin-top: 40px;
-}
-.contenedor-video {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* permite varios trailers */
+    
+    background: rgba(20,20,20,0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 80, 0, 0.3);
+    
+    text-align: center;
 }
 
-/* TARJETA DE VIDEO */
+.audio-player {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* ========================= */
+/* VIDEO INTERACTIVO */
+/* ========================= */
+
 .video-interactivo {
     position: relative;
-    width: 320px; /* 🔥 tamaño tipo Netflix */
-    height: 180px;
     cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
 }
 
-/* VIDEO */
-.video-portada {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* BOTÓN PLAY */
 .play-btn {
     position: absolute;
     top: 50%;
     left: 50%;
+    
     transform: translate(-50%, -50%);
     
-    font-size: 30px;
+    font-size: 50px;
     color: white;
     background: rgba(0,0,0,0.6);
-    padding: 10px 15px;
+    
+    padding: 15px 20px;
     border-radius: 50%;
     
-    pointer-events: none; /* 🔥 IMPORTANTE */
     transition: 0.3s;
 }
 
@@ -302,64 +305,41 @@ footer {
     background: rgba(255, 80, 0, 0.8);
     transform: translate(-50%, -50%) scale(1.1);
 }
+
+
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
 
-
-/* ===== COMPUTADOR GRANDE ===== */
-
+/* PC GRANDE */
 @media (min-width:1400px) {
-
-    main {
-        max-width: 1200px;
+    .capitulo {
+        max-width: 900px;
     }
 
-    .header-portada {
-        height: 420px;
-    }
-
-    .header-contenido h1 {
-        font-size: 3.2rem;
-    }
-
-    .header-contenido h2 {
-        font-size: 1.6rem;
+    .portada-capitulo {
+        height: 550px;
     }
 }
 
-
-/* ===== LAPTOP / PC NORMAL ===== */
-
+/* LAPTOP */
 @media (max-width:1200px) {
-
-    main {
+    .capitulo {
         width: 90%;
     }
-
-    .header-portada {
-        height: 350px;
-    }
 }
 
-
-/* ===== TABLET ===== */
-
+/* TABLET */
 @media (max-width:900px) {
-
-    main {
-        width: 92%;
+    .portada-capitulo {
+        height: 380px;
     }
 
-    .header-portada {
-        height: 280px;
-    }
-
-    .header-contenido h1 {
+    .portada-contenido h1 {
         font-size: 2.2rem;
     }
 
-    .header-contenido h2 {
+    .portada-contenido h2 {
         font-size: 1.3rem;
     }
 
@@ -368,43 +348,31 @@ footer {
     }
 }
 
-
-/* ===== CELULAR ===== */
-
+/* CELULAR */
 @media (max-width:600px) {
-
-    .header-portada {
-        height: 220px;
+    .portada-capitulo {
+        height: 260px;
     }
 
-    .header-contenido h1 {
-        font-size: 1.8rem;
+    .portada-contenido h1 {
+        font-size: 1.7rem;
     }
 
-    .header-contenido h2 {
-        font-size: 1.1rem;
-    }
-
-    main {
-        width: 95%;
-        padding: 15px;
+    .portada-contenido h2 {
+        font-size: 1rem;
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
     }
 
-    .foro-categoria {
-        padding: 15px;
+    .capitulo {
+        width: 95%;
+        padding: 25px 18px;
     }
 
-    .tema {
-        padding: 12px;
-    }
-
-    .imagen-novela {
-        width: 100%;
+    .capitulo p {
+        font-size: 17px;
     }
 }
