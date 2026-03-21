@@ -1,10 +1,10 @@
-/* ========================= */
+bro ayudame a arreglar la sintesis del codigo no cambien ni pongas nada solo arregla la sintesis y agrega comentarios para cada cosa: ﻿/* ========================= */
 /* ESTILO GENERAL CAPITULOS */
 /* ========================= */
 
 body {
-    background: #0b0b0b; /* Fondo oscuro */
-    color: #e6e6e6; /* Color del texto */
+    background: #0b0b0b;
+    color: #e6e6e6;
     font-family: Arial, sans-serif;
     margin: 0;
     line-height: 1.7;
@@ -12,20 +12,32 @@ body {
 
 
 /* ========================= */
-/* COLORES DE TÍTULOS */
+/* COLORES TITULOS */
 /* ========================= */
 
-h1 { color: #e6c76b; }
-h2 { color: #d9b85a; }
-h3 { color: #cfae55; }
-h4 { color: #bfa65a; }
-h5 { color: #a89255; }
-h6 { color: #8f7c4a; }
+h1 {
+    color: #e6c76b;
+}
 
+h2 {
+    color: #d9b85a;
+}
 
-/* ========================= */
-/* MENÚ Y SUBMENÚ */
-/* ========================= */
+h3 {
+    color: #cfae55;
+}
+
+h4 {
+    color: #bfa65a;
+}
+
+h5 {
+    color: #a89255;
+}
+
+h6 {
+    color: #8f7c4a;
+}
 
 .menu {
     display: flex;
@@ -34,11 +46,11 @@ h6 { color: #8f7c4a; }
 }
 
 .menu-item {
-    position: relative; /* necesario para submenu */
+    position: relative;
 }
 
 .submenu {
-    display: none; /* oculto por defecto */
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -67,9 +79,8 @@ h6 { color: #8f7c4a; }
     background: rgba(255,80,0,0.6);
 }
 
-
 /* ========================= */
-/* PORTADA CAPÍTULO */
+/* PORTADA CAPITULO */
 /* ========================= */
 
 .portada-capitulo {
@@ -99,9 +110,7 @@ h6 { color: #8f7c4a; }
     }
 
 
-/* ========================= */
 /* TEXTO PORTADA */
-/* ========================= */
 
 .portada-contenido {
     position: relative;
@@ -118,8 +127,9 @@ h6 { color: #8f7c4a; }
     }
 
 
+
 /* ========================= */
-/* NAVEGACIÓN */
+/* NAVEGACION */
 /* ========================= */
 
 nav {
@@ -127,99 +137,103 @@ nav {
     padding: 12px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 0;
-    margin: 0;
-}
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 0;
+        margin: 0;
+    }
 
-nav a {
-    text-decoration: none;
-    color: #e6e6e6;
-    font-weight: bold;
-}
+    nav a {
+        text-decoration: none;
+        color: #e6e6e6;
+        font-weight: bold;
+    }
 
-nav a:hover {
-    color: #d94c1a;
-}
+        nav a:hover {
+            color: #d94c1a;
+        }
+
 
 
 /* ========================= */
-/* CONTENIDO CAPÍTULO */
+/* CONTENIDO CAPITULO */
 /* ========================= */
 
 .capitulo {
     max-width: 800px;
     margin: auto;
     padding: 40px 25px;
-    
     line-height: 1.9;
     font-size: 18px;
-    
     background: #111;
     border-left: 3px solid #8b1e1e;
     border-right: 3px solid #8b1e1e;
 }
 
 
-/* TÍTULO PRINCIPAL */
-.capitulo h1 {
-    text-align: center;
-    font-size: 2.4rem;
-    margin-bottom: 25px;
-    
-    letter-spacing: 2px;
-    border-bottom: 1px solid #8b1e1e;
-    padding-bottom: 15px;
-}
+
+    /* TITULO DEL CAPITULO */
+
+    .capitulo h1 {
+        text-align: center;
+        font-size: 2.4rem;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #8b1e1e;
+        padding-bottom: 15px;
+    }
 
 
-/* SUBTÍTULOS / ACTOS */
-.capitulo h2 {
-    margin-top: 35px;
-    margin-bottom: 20px;
-    
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    
-    border-left: 4px solid #8b1e1e;
-    padding-left: 12px;
-}
+
+    /* ACTOS */
+
+    .capitulo h2 {
+        margin-top: 35px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        border-left: 4px solid #8b1e1e;
+        padding-left: 12px;
+    }
 
 
-/* TÍTULOS MENORES */
-.capitulo h3 {
-    margin-top: 40px;
-    text-align: center;
-    letter-spacing: 1px;
-}
+
+    /* TITULOS MENORES */
+
+    .capitulo h3 {
+        margin-top: 40px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
 
 
-/* PÁRRAFOS */
-.capitulo p {
-    margin-bottom: 20px;
-    text-align: justify;
-}
+
+    /* PARRAFOS */
+
+    .capitulo p {
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
 
 
 /* ========================= */
-/* NOTA DEL AUTOR */
+/* NOTAS DEL AUTOR */
 /* ========================= */
 
 .nota-autor {
     margin-top: 30px;
     padding: 18px;
-    
     background: #1a1a1a;
     border-left: 4px solid #d94c1a;
-    
     font-style: italic;
     font-size: 16px;
     color: #cfcfcf;
 }
+
 
 
 /* ========================= */
@@ -229,44 +243,29 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    
     background: #111;
     border-top: 2px solid #8b1e1e;
-    
     margin-top: 40px;
 }
 
-
-/* ========================= */
-/* IMÁGENES */
-/* ========================= */
+/* ========================= */ /* IMÁGENES */ /* ========================= */
 
 .imagen-novela {
     width: 250px;
     max-width: 100%;
     height: auto;
-    
     display: block;
     margin: 15px auto 25px auto;
-    
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(217,76,26,0.6);
 }
-
-
-/* ========================= */
-/* AUDIO */
-/* ========================= */
-
 .contenedor-audio {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
-    
     background: rgba(20,20,20,0.9);
     border-radius: 15px;
     box-shadow: 0 0 25px rgba(255, 80, 0, 0.3);
-    
     text-align: center;
 }
 
@@ -274,12 +273,6 @@ footer {
     width: 100%;
     margin-top: 10px;
 }
-
-
-/* ========================= */
-/* VIDEO INTERACTIVO */
-/* ========================= */
-
 .video-interactivo {
     position: relative;
     cursor: pointer;
@@ -289,13 +282,11 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    
     transform: translate(-50%, -50%);
     
     font-size: 50px;
     color: white;
     background: rgba(0,0,0,0.6);
-    
     padding: 15px 20px;
     border-radius: 50%;
     
@@ -306,6 +297,7 @@ footer {
     background: rgba(255, 80, 0, 0.8);
     transform: translate(-50%, -50%) scale(1.1);
 }
+
 /* ========================= */
 /* CENIZA CINEMÁTICA PRO */
 /* ========================= */
@@ -337,13 +329,14 @@ footer {
         transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));
     }
 }
-
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
 
 /* PC GRANDE */
+
 @media (min-width:1400px) {
+
     .capitulo {
         max-width: 900px;
     }
@@ -353,15 +346,23 @@ footer {
     }
 }
 
+
+
 /* LAPTOP */
+
 @media (max-width:1200px) {
+
     .capitulo {
         width: 90%;
     }
 }
 
+
+
 /* TABLET */
+
 @media (max-width:900px) {
+
     .portada-capitulo {
         height: 380px;
     }
@@ -379,8 +380,12 @@ footer {
     }
 }
 
+
+
 /* CELULAR */
+
 @media (max-width:600px) {
+
     .portada-capitulo {
         height: 260px;
     }
@@ -403,7 +408,7 @@ footer {
         padding: 25px 18px;
     }
 
-    .capitulo p {
-        font-size: 17px;
-    }
+        .capitulo p {
+            font-size: 17px;
+        }
 }
