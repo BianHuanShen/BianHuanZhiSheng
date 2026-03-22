@@ -1,0 +1,52 @@
+﻿/* ========================= */
+/* CONTENIDO CAPITULO */
+/* ========================= */
+.capitulo {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 25px;
+    line-height: 1.9;
+    font-size: 18px;
+    background: #111;
+    border-left: 3px solid #8b1e1e;
+    border-right: 3px solid #8b1e1e;
+}
+/* ========================= */
+/* PORTADA CAPITULO */
+/* ========================= */
+
+.portada-capitulo {
+    background-image: url("../img/imagenh.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid #8b1e1e;
+}
+    /* capa oscura */
+    .portada-capitulo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.55);
+    }
+/* TEXTO PORTADA */
+.portada-contenido {
+    position: relative;
+    text-align: center;
+}
+.nota-autor {
+    margin-top: 30px;
+    padding: 18px;
+    background: #1a1a1a;
+    border-left: 4px solid #d94c1a;
+    font-style: italic;
+}
