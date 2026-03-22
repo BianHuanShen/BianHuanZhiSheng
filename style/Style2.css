@@ -1,0 +1,492 @@
+﻿/* =====================================================
+   VARIABLES GLOBALES (themes.js)
+===================================================== */
+:root {
+    --bg: #0b0b0b;
+    --card: #161616;
+    --h-color: #e6c76b; /* dorado ceniza */
+    --p-color: #cfcfcf;
+    --btn-color: #8b0000; /* rojo sangre */
+    --btn-text: #ffffff;
+    --accent: #ff3c00; /* fuego */
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at center, #1a1a1a, var(--bg));
+    color: var(--p-color);
+    font-family: system-ui, sans-serif;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   EFECTO CENIZA 🔥
+===================================================== */
+.ceniza {
+    position: fixed;
+    top: -10px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    filter: blur(1px);
+    pointer-events: none;
+    z-index: 1;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(var(--drift));
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));
+    }
+}
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    background: linear-gradient(90deg, #111, #1a0000);
+    border-bottom: 1px solid rgba(255,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(135deg,#ff3c00,#ff0000,#6a0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
+
+/* =====================================================
+   BOTONES
+===================================================== */
+button {
+    background: linear-gradient(135deg, #8b0000, #3a0000);
+    color: var(--btn-text);
+    border: 1px solid rgba(255,0,0,0.4);
+    padding: 4px 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+    button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 12px rgba(255,0,0,0.6);
+    }
+
+/* 🔥 PERSONALIZAR */
+#themeBtn {
+    background: linear-gradient(135deg, #444, #111);
+    border: 1px solid #666;
+}
+
+    #themeBtn:hover {
+        box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+/* 🔥 LOGIN (ESTILO SANGRE PRO) */
+.login-btn {
+    background: linear-gradient(135deg,#ff0000,#8b0000,#2b0000);
+    box-shadow: 0 0 10px rgba(255,0,0,0.5);
+}
+
+    .login-btn:hover {
+        box-shadow: 0 0 20px rgba(255,0,0,0.9);
+        transform: scale(1.1);
+    }
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+.top-dropdowns {
+    display: flex;
+    gap: 10px;
+}
+
+.dropdown-btn {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 6px;
+    border: 1px solid rgba(255,0,0,0.3);
+}
+
+.dropdown-btn:hover .dropdown-content {
+    display: block;
+}
+
+/* =====================================================
+   PANEL DE COLORES
+===================================================== */
+.color-panel {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    padding: 15px;
+    border-radius: 14px;
+    z-index: 9999;
+    width: 260px;
+    border: 1px solid rgba(255,0,0,0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+/* =====================================================
+   PALETA
+===================================================== */
+.palette {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 6px;
+}
+
+.color-swatch {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .color-swatch:hover {
+        transform: scale(1.2);
+    }
+
+.palette-modes {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.mode-btn.active {
+    background: var(--btn-color);
+}
+
+/* =====================================================
+   PORTADA
+===================================================== */
+.header-portada {
+    background-image: url("../img/imagenh.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid #8b1e1e;
+}
+    /* capa oscura para mejorar lectura */
+
+    .header-portada::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.55);
+    }
+/* contenido del header */
+
+.header-contenido {
+    position: relative;
+    text-align: center;
+}
+
+    .header-contenido h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .header-contenido h2 {
+        margin-top: 10px;
+    }
+
+/* =====================================================
+   NAV
+===================================================== */
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+    .menu a {
+        color: white;
+        transition: 0.3s;
+    }
+
+        .menu a:hover {
+            color: #ff6a00;
+            text-shadow: 0 0 5px #ff6a00, 0 0 15px #ff4500, 0 0 30px #ff2200;
+        }
+
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 180px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+    .submenu li {
+        list-style: none;
+    }
+
+        .submenu li a {
+            display: block;
+            padding: 8px;
+            color: white;
+            text-decoration: none;
+        }
+
+            .submenu li a:hover {
+                background: rgba(255,80,0,0.6);
+            }
+
+nav {
+    background: #111;
+    padding: 12px;
+}
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #e6e6e6;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            color: #d94c1a;
+        }
+/* =====================================================
+   MAIN
+===================================================== */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+.foro-categoria {
+    background: #1c1c1c;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #8b1e1e;
+    border-radius: 6px;
+}
+
+.tema {
+    background: #2a2a2a;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+    .tema a {
+        color: #e6e6e6;
+        text-decoration: none;
+    }
+
+        .tema a:hover {
+            color: #d94c1a;
+        }
+
+/* =====================================================
+   VIDEO
+===================================================== */
+.contenedor-video {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* permite varios trailers */
+}
+
+/* TARJETA DE VIDEO */
+.video-interactivo {
+    position: relative;
+    width: 320px; /* 🔥 tamaño tipo Netflix */
+    height: 180px;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* VIDEO */
+.video-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTÓN PLAY */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 15px;
+    border-radius: 50%;
+    pointer-events: none; /* 🔥 IMPORTANTE */
+    transition: 0.3s;
+}
+
+.video-interactivo:hover .play-btn {
+    background: rgba(255, 80, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* =====================================================
+   IMAGEN NOVELA
+===================================================== */
+.imagen-novela {
+    width: 250px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,80,0,0.4);
+}
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+.photo-carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    cursor: grab;
+}
+
+    .photo-carousel img {
+        width: 180px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+        .photo-carousel img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(255,80,0,0.6);
+        }
+
+/* =====================================================
+   BOTONES CAPITULO
+===================================================== */
+.boton-capitulo {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg,#8b0000,#2b0000);
+    color: var(--btn-text);
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+    .boton-capitulo:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(255,0,0,0.7);
+    }
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+    background: #0f0f0f;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,0,0,0.2);
+}
+
+.btn-return {
+    display: inline-block;
+    margin-top: 10px;
+    background: linear-gradient(135deg,#ff0000,#8b0000);
+    padding: 8px 16px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media(max-width:600px) {
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-portada {
+        height: 200px;
+    }
+
+    .video-interactivo {
+        width: 100%;
+    }
+}

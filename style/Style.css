@@ -1,0 +1,569 @@
+﻿/* ========================= */
+/* ESTILO GENERAL CAPITULOS */
+/* ========================= */
+
+body {
+    background: radial-gradient(circle at center, #1a1a1a, #000);
+    color: #ccc;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.7;
+}
+/* 🌫️ FONDO CENIZA */
+/* ========================= */
+/* CENIZA CINEMÁTICA PRO */
+/* ========================= */
+
+.ceniza {
+    position: fixed;
+    top: -10px;
+    filter: blur(1px);
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+
+    pointer-events: none; /* 🔥 no bloquea clicks */
+    z-index: 1;
+
+    animation: caer linear infinite;
+}
+
+/* Movimiento realista */
+@keyframes caer {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(var(--drift));
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));
+    }
+}
+/* =====================================================
+   TOPBAR
+===================================================== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    background: linear-gradient(90deg, #111, #1a0000);
+    border-bottom: 1px solid rgba(255,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(135deg,#ff3c00,#ff0000,#6a0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
+
+/* =====================================================
+   BOTONES
+===================================================== */
+button {
+    background: linear-gradient(135deg, #8b0000, #3a0000);
+    color: var(--btn-text);
+    border: 1px solid rgba(255,0,0,0.4);
+    padding: 4px 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+    button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 12px rgba(255,0,0,0.6);
+    }
+
+/* 🔥 PERSONALIZAR */
+#themeBtn {
+    background: linear-gradient(135deg, #444, #111);
+    border: 1px solid #666;
+}
+
+    #themeBtn:hover {
+        box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+/* 🔥 LOGIN (ESTILO SANGRE PRO) */
+.login-btn {
+    background: linear-gradient(135deg,#ff0000,#8b0000,#2b0000);
+    box-shadow: 0 0 10px rgba(255,0,0,0.5);
+}
+
+    .login-btn:hover {
+        box-shadow: 0 0 20px rgba(255,0,0,0.9);
+        transform: scale(1.1);
+    }
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+.top-dropdowns {
+    display: flex;
+    gap: 10px;
+}
+
+.dropdown-btn {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 6px;
+    border: 1px solid rgba(255,0,0,0.3);
+}
+
+.dropdown-btn:hover .dropdown-content {
+    display: block;
+}
+
+/* =====================================================
+   PANEL DE COLORES
+===================================================== */
+.color-panel {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    padding: 15px;
+    border-radius: 14px;
+    z-index: 9999;
+    width: 260px;
+    border: 1px solid rgba(255,0,0,0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+/* =====================================================
+   PALETA
+===================================================== */
+.palette {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 6px;
+}
+
+.color-swatch {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .color-swatch:hover {
+        transform: scale(1.2);
+    }
+
+.palette-modes {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.mode-btn.active {
+    background: var(--btn-color);
+}
+/* ========================= */ /* COLORES GENERALES TITULOS */ /* ========================= */
+
+h1 {
+    color: #e6c76b;
+}
+
+h2 {
+    color: #d9b85a;
+}
+
+h3 {
+    color: #cfae55;
+}
+
+h4 {
+    color: #bfa65a;
+}
+
+h5 {
+    color: #a89255;
+}
+
+h6 {
+    color: #8f7c4a;
+}
+/* ========================= */ /* HEADER PORTADA */ /* ========================= */
+
+.header-portada {
+    background-image: url("../img/imagenh.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid #8b1e1e;
+}
+    /* capa oscura para mejorar lectura */
+
+    .header-portada::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.55);
+    }
+/* contenido del header */
+
+.header-contenido {
+    position: relative;
+    text-align: center;
+}
+
+    .header-contenido h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .header-contenido h2 {
+        margin-top: 10px;
+    }
+/* ========================= */ /* NAVEGACIÓN */ /* ========================= */
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.menu a {
+    color: white;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ff6a00;
+    text-shadow:
+        0 0 5px #ff6a00,
+        0 0 15px #ff4500,
+        0 0 30px #ff2200;
+}
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 180px;
+    
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.submenu li {
+    list-style: none;
+}
+
+.submenu li a {
+    display: block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background: rgba(255,80,0,0.6);
+}
+nav {
+    background: #111;
+    padding: 12px;
+}
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #e6e6e6;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            color: #d94c1a;
+        }
+/* ========================= */ /* CONTENIDO PRINCIPAL */ /* ========================= */
+/* 🔥 TEXTO CON FUEGO */
+.texto-fuego {
+    color: #ff6a00;
+    text-shadow:
+        0 0 5px #ff6a00,
+        0 0 10px #ff4500,
+        0 0 20px #ff2200,
+        0 0 40px rgba(255, 80, 0, 0.7);
+}
+
+/* 🔥 HOVER EFECTO */
+.texto-fuego:hover {
+    text-shadow:
+        0 0 10px #ff6a00,
+        0 0 20px #ff4500,
+        0 0 40px #ff2200,
+        0 0 80px rgba(255, 80, 0, 1);
+    transition: 0.3s;
+}
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+/* ========================= */ /* FORO */ /* ========================= */
+
+.foro-categoria {
+    background: #1c1c1c;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #8b1e1e;
+    border-radius: 6px;
+}
+
+.tema {
+    background: #2a2a2a;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+    .tema a {
+        color: #e6e6e6;
+        text-decoration: none;
+    }
+
+        .tema a:hover {
+            color: #d94c1a;
+        }
+/* ========================= */ /* IMÁGENES */ /* ========================= */
+
+.imagen-novela {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(217,76,26,0.6);
+}
+/* ========================= */ /* FOOTER */ /* ========================= */
+/* ========================= */
+/* BOTONES CAPITULOS */
+/* ========================= */
+
+.boton-capitulo {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #1c1c1c;
+    color: #e6c76b;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #8b1e1e;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+
+    /* efecto hover */
+.boton-capitulo:hover {
+        background: #8b1e1e;
+        color: white;
+        box-shadow: 0 0 10px rgba(217,76,26,0.7);
+        transform: translateY(-2px);
+    }
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    border-top: 2px solid #8b1e1e;
+    margin-top: 40px;
+}
+.contenedor-video {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* permite varios trailers */
+}
+
+/* TARJETA DE VIDEO */
+.video-interactivo {
+    position: relative;
+    width: 320px; /* 🔥 tamaño tipo Netflix */
+    height: 180px;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* VIDEO */
+.video-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTÓN PLAY */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 30px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 15px;
+    border-radius: 50%;
+    
+    pointer-events: none; /* 🔥 IMPORTANTE */
+    transition: 0.3s;
+}
+
+.video-interactivo:hover .play-btn {
+    background: rgba(255, 80, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+
+/* ===== COMPUTADOR GRANDE ===== */
+
+@media (min-width:1400px) {
+
+    main {
+        max-width: 1200px;
+    }
+
+    .header-portada {
+        height: 420px;
+    }
+
+    .header-contenido h1 {
+        font-size: 3.2rem;
+    }
+
+    .header-contenido h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ===== LAPTOP / PC NORMAL ===== */
+
+@media (max-width:1200px) {
+
+    main {
+        width: 90%;
+    }
+
+    .header-portada {
+        height: 350px;
+    }
+}
+
+
+/* ===== TABLET ===== */
+
+@media (max-width:900px) {
+
+    main {
+        width: 92%;
+    }
+
+    .header-portada {
+        height: 280px;
+    }
+
+    .header-contenido h1 {
+        font-size: 2.2rem;
+    }
+
+    .header-contenido h2 {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+
+/* ===== CELULAR ===== */
+
+@media (max-width:600px) {
+
+    .header-portada {
+        height: 220px;
+    }
+
+    .header-contenido h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-contenido h2 {
+        font-size: 1.1rem;
+    }
+
+    main {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .foro-categoria {
+        padding: 15px;
+    }
+
+    .tema {
+        padding: 12px;
+    }
+
+    .imagen-novela {
+        width: 100%;
+    }
+}
