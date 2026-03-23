@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Foro - El Latido de la Ceniza</title>
+
+    <!-- RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- 🔥 CSS GLOBAL -->
+        <link rel="stylesheet" href="style/themes.css">
+        <link rel="stylesheet" href="style/base.css">
+        <link rel="stylesheet" href="style/menu.css">
+        <link rel="stylesheet" href="style/efectos.css">
+        <link rel="stylesheet" href="style/media.css">
+        <link rel="stylesheet" href="style/componentes.css">
+
+        <!-- 🌐 CSS ESPECIFICO -->
+        <link rel="stylesheet" href="style/index.css">
+    </head>
+<body id="top">
+
+    <!-- ================= TOPBAR ================= -->
+    <header class="topbar">
+
+        <div class="top-dropdowns">
+            <div class="dropdown-btn">
+                <button id="themeBtn">🎨 Personalizar</button>
+
+                <div class="dropdown-content">
+
+                    <!-- 🔥 TEMAS -->
+                    <button onclick="setTemaFuego()">🔥 Fuego</button>
+                    <button onclick="setTemaCeniza()">🌫️ Ceniza</button>
+                    <button onclick="setTemaVacio()">🌌 Vacío</button>
+
+                    <hr>
+
+                    <!-- 🔘 BOTONES -->
+                    <button id="btnStyleBtn">🔘 Botones</button>
+
+                    <hr>
+
+                    <!-- ♻️ RESET -->
+                    <button id="resetTheme">♻️ Defecto</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="logo">Darkwell</div>
+
+        <button class="login-btn">Login</button>
+
+    </header>
+
+    <!-- ================= PANEL COLOR ================= -->
+    <div id="colorPanel" class="color-panel hidden">
+
+        <h4>🎨 Personalizar sitio</h4>
+
+        <div class="palette-modes">
+            <button class="mode-btn active" data-mode="bg">Fondo</button>
+            <button class="mode-btn" data-mode="h">Títulos</button>
+            <button class="mode-btn" data-mode="p">Texto</button>
+        </div>
+
+        <div class="palette"></div>
+
+        <input type="color" id="colorPicker">
+
+        <button id="closePalette">Cerrar</button>
+
+    </div>
+
+    <!-- ================= PANEL BOTONES ================= -->
+    <div id="btnPanel" class="color-panel hidden">
+
+        <h4>🔘 Personalizar botones</h4>
+
+        <div class="palette-modes">
+            <button class="mode-btn active" data-mode="btn-bg">Fondo</button>
+            <button class="mode-btn" data-mode="btn-text">Texto</button>
+        </div>
+
+        <div class="palette"></div>
+
+        <input type="color" id="btnColorPicker">
+
+        <button id="closeBtnPalette">Cerrar</button>
+
+    </div>
+
+    <!-- ================= PORTADA ================= -->
+    <header class="header-portada">
+
+        <div class="header-contenido">
+            <h1>🔥 Foro Oficial</h1>
+            <h2>El Latido de la Ceniza</h2>
+        </div>
+
+    </header>
+
+    <!-- ================= NAV ================= -->
+    <nav>
+        <ul class="menu">
+
+            <!-- INICIO -->
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+
+            <!-- CAPITULOS -->
+            <li class="menu-item">
+                <a href="#" class="menu-btn">Capítulos</a>
+                <ul class="submenu" id="submenu-capitulos"></ul>
+            </li>
+
+            <!-- TEORIAS -->
+            <li class="menu-item">
+                <a href="#" class="menu-btn">Teorías</a>
+                <ul class="submenu" id="submenu-teorias"></ul>
+            </li>
+
+            <!-- PERSONAJES -->
+            <li class="menu-item">
+                <a href="#" class="menu-btn">Personajes</a>
+                <ul class="submenu" id="submenu-personajes"></ul>
+            </li>
+
+            <!-- UNIVERSO -->
+            <li class="menu-item">
+                <a href="#" class="menu-btn">Universo</a>
+                <ul class="submenu" id="submenu-universo"></ul>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- ===== TRAILERS ===== -->
+        <section class="tema video-tema">
+
+            <h2 class="titulo-video">🎬 Trailers</h2>
+
+            <div class="contenedor-video">
+
+                <div class="video-interactivo">
+                    <video class="video-portada" muted preload="metadata" controls>
+                        <source src="video/Trailer.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="video-interactivo">
+                    <video class="video-portada" muted preload="metadata" controls>
+                        <source src="video/Trailer2.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="video-interactivo">
+                    <video class="video-portada" muted preload="metadata" controls>
+                        <source src="video/Trailer3.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===== FORO ===== -->
+        <section class="foro-categoria">
+
+            <h3>📖 El Grimorio del Cambio</h3>
+
+            <div class="tema">
+
+                <img src="img/imagenportada.png" alt="Portada novela" class="imagen-novela">
+
+                <p>
+                    Archivo donde se registran las crónicas del Cambio,
+                    la fuerza que transforma mundos, destinos y existencias.
+                </p>
+
+            </div>
+
+            <!-- ===== GALERÍA ===== -->
+            <div class="tema">
+
+                <h3>🖼️ Galería</h3>
+
+                <div class="photo-carousel">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                    <img src="img/imagenportada.png" alt="">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===== BOTONES ===== -->
+        <section class="tema" style="text-align:center;">
+
+            <a href="capitulos/capitulo1.html" class="boton-capitulo">Capítulo 1</a>
+            <a href="capitulos/capitulo1actoII.html" class="boton-capitulo">Capítulo 1 Parte II</a>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+
+        <p>
+            © 2026 Richar Adrian Florez Gonzalez —
+            <strong>El Latido de la Ceniza Primordial</strong>
+        </p>
+
+        <div class="footer-return">
+            <a href="#top" class="btn-return">⬆ Volver arriba</a>
+        </div>
+
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <!-- EFECTO -->
+    <script src="js/efecto.js"></script>
+
+    <!-- THEMES -->
+    <script src="js/themes.js"></script>
+
+    <!-- GALERÍA -->
+    <script src="js/gallery.js"></script>
+
+    <!-- MENU -->
+    <script src="js/menu-di.js"></script>
+
+    <!-- VIDEO -->
+    <script src="js/video.js"></script>
+
+</body>
+</html>
