@@ -9,7 +9,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const cantidad = 60; // 🔥 más partículas = más calidad
+    const cantidad = 60; //  más partículas = más calidad
 
     for (let i = 0; i < cantidad; i++) {
 
